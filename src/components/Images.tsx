@@ -22,6 +22,24 @@ export const Images = ({ data }: Props) => {
 
   return (
     <>
+      <div style={{ paddingTop: "5rem" }}>
+        <ReactPaginate
+          // basic props
+          breakLabel="..."
+          nextLabel="next >"
+          onPageChange={handlePageClick}
+          pageRangeDisplayed={2} // default is 2
+          pageCount={pageCount}
+          previousLabel="< previous"
+          renderOnZeroPageCount={null}
+          // style props
+          containerClassName="pagination"
+          pageLinkClassName="page-num"
+          previousLinkClassName="page-num"
+          nextLinkClassName="page-num"
+          activeLinkClassName="active"
+        />
+      </div>
       <div className="images">
         {currentItems?.map((item) => (
           <div key={item?.id} className="image">
@@ -29,15 +47,6 @@ export const Images = ({ data }: Props) => {
           </div>
         ))}
       </div>
-      <ReactPaginate
-        breakLabel="..."
-        nextLabel="next >"
-        onPageChange={handlePageClick}
-        // pageRangeDisplayed={5}
-        pageCount={pageCount}
-        previousLabel="< previous"
-        renderOnZeroPageCount={null}
-      />
     </>
   );
 };

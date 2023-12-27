@@ -12,7 +12,7 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 1rem;
-  margin: 100px auto;
+  margin: 0 auto;
   width: 60%;
   min-height: 70vh;
 }
@@ -29,4 +29,30 @@
 .image img {
   display: block;
   width: 100%;
+}
+
+.pagination {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+  font-size: 1.2rem;
+  gap: 10px;
+}
+
+.page-num {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 3px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+.page-num:hover {
+  background-color: #eee;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.active {
+  background-color: #eee;
 }
