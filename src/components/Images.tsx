@@ -12,7 +12,6 @@ export const Images = ({ data }: Props) => {
   const endOffset = itemOffset + itemsPerPage;
 
   const currentItems = data?.slice(itemOffset, endOffset);
-  console.log("📢[Images.tsx:15]: currentItems: ", currentItems);
 
   const pageCount = Math.ceil(data?.length / itemsPerPage);
 
@@ -23,6 +22,13 @@ export const Images = ({ data }: Props) => {
 
   return (
     <>
+      <div className="images">
+        {currentItems?.map((item) => (
+          <div key={item?.id} className="image">
+            <img src={item?.url} alt={item?.title} />
+          </div>
+        ))}
+      </div>
       <ReactPaginate
         breakLabel="..."
         nextLabel="next >"
